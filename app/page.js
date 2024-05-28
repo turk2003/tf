@@ -27,15 +27,15 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
+    <div className="min-h-screen bg-green-200 flex items-center justify-center p-4">
+      <div className="bg-purple-400 p-8 rounded-lg shadow-md w-full max-w-lg">
         <h1 className="text-2xl font-bold mb-6 text-center">
           Transformers-App
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-gray-700 font-medium mb-2">
-              Choose an option:
+              เลือกหม้อเเปลง :
             </label>
             <select
               name="dropdown"
@@ -49,7 +49,39 @@ export default function Home() {
           </div>
           <div>
             <label className="block text-gray-700 font-medium mb-2">
-              ระยะ TR-LT :
+              ขนาดหม้อเเปลง :
+            </label>
+            <select
+              name="dropdown"
+              value={formData.dropdown}
+              onChange={handleChange}
+              className="w-full border border-gray-300 p-2 rounded-md"
+            >
+              <option value="option1">30</option>
+              <option value="option2">50</option>
+              <option value="option3">100</option>
+              <option value="option4">160</option>
+              <option value="option5">250</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              ระยะห่างระหว่างหม้อเเปลงถึงLT :{" "}
+              <a className="text-red-300" href="/">
+                *ดูเพิ่มเติม
+              </a>
+            </label>
+            <input
+              type="number"
+              name="number"
+              value={formData.number}
+              onChange={handleChange}
+              className="w-full border border-gray-300 p-2 rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              ระยะ หม้อเเปลง-N :
             </label>
             <input
               type="number"
