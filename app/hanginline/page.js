@@ -106,9 +106,9 @@ export default function Page() {
             <div className="space-y-4">
               <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
                 <p className="font-semibold">ออกจากหม้อแปลง - ขาเข้า LT</p>
-                <p>PhaseA: {phaseA}</p>
-                <p>PhaseB: {phaseB}</p>
-                <p>PhaseC: {phaseC}</p>
+                <p>PhaseA: {phaseA.toFixed(1)}</p>
+                <p>PhaseB: {phaseB.toFixed(1)}</p>
+                <p>PhaseC: {phaseC.toFixed(1)}</p>
                 <p>N: {newton.toFixed(1)}</p>
               </div>
               <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
