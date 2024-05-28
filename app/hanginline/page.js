@@ -77,7 +77,7 @@ export default function Page() {
           </div>
           <div>
             <label className="block text-blackfont-medium text-lg mb-2">
-              ระยะ หม้อเเปลง - N:{" "}
+              ระยะห่างระหว่างหม้อเเปลงถึง N:{" "}
               <a className="text-red-600  text-sm " href="/">
                 *ดูเพิ่มเติม
               </a>
@@ -95,7 +95,7 @@ export default function Page() {
             type="submit"
             className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200"
           >
-            Submit
+            คำนวณ
           </button>
         </form>
         {phaseA !== undefined && (
