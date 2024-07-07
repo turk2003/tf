@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
+import jinx from "/public/jinx.jpg";
+import Tf from "/public/Tf.png";
 
+import Image from "next/image";
 export default function Page() {
   const [phaseA, setPhaseA] = useState();
   const [phaseB, setPhaseB] = useState();
@@ -10,7 +13,8 @@ export default function Page() {
   const [phaseC1, setPhaseC1] = useState();
   const [newton, setNewton] = useState();
   const [formData, setFormData] = useState({
-    dropdown: "",
+    tf: "",
+    pole: "",
     LT: "",
     N: "",
   });
@@ -24,14 +28,49 @@ export default function Page() {
   };
 
   const handleSubmit = (e) => {
+    console.log(formData.tf);
     e.preventDefault();
-    setPhaseA(Number(formData.LT) + 3.67);
-    setPhaseB(Number(formData.LT) + 3.17);
-    setPhaseC(Number(formData.LT) + 3.67);
-    setPhaseA1(Number(formData.N) + 2.24);
-    setPhaseB1(Number(formData.N) + 2.24);
-    setPhaseC1(Number(formData.N) + 2.24);
-    setNewton(Number(formData.N) + 1.9);
+    if (formData.tf === "50") {
+      setPhaseA(Number(formData.LT) + 3.1);
+      setPhaseB(Number(formData.LT) + 2.8);
+      setPhaseC(Number(formData.LT) + 3.3);
+      setPhaseA1(Number(formData.N) + 2.78);
+      setPhaseB1(Number(formData.N) + 2.28);
+      setPhaseC1(Number(formData.N) + 2.58);
+      setNewton(Number(formData.N) + 1.4);
+    } else if (formData.tf === "30") {
+      setPhaseA(Number(formData.LT) + 1);
+      setPhaseB(Number(formData.LT) + 1);
+      setPhaseC(Number(formData.LT) + 1);
+      setPhaseA1(Number(formData.N) + 1);
+      setPhaseB1(Number(formData.N) + 1);
+      setPhaseC1(Number(formData.N) + 1);
+      setNewton(Number(formData.N) + 1);
+    } else if (formData.tf === "100") {
+      setPhaseA(Number(formData.LT) + 1);
+      setPhaseB(Number(formData.LT) + 1);
+      setPhaseC(Number(formData.LT) + 1);
+      setPhaseA1(Number(formData.N) + 1);
+      setPhaseB1(Number(formData.N) + 1);
+      setPhaseC1(Number(formData.N) + 1);
+      setNewton(Number(formData.N) + 1);
+    } else if (formData.tf === "160") {
+      setPhaseA(Number(formData.LT) + 1);
+      setPhaseB(Number(formData.LT) + 1);
+      setPhaseC(Number(formData.LT) + 1);
+      setPhaseA1(Number(formData.N) + 1);
+      setPhaseB1(Number(formData.N) + 1);
+      setPhaseC1(Number(formData.N) + 1);
+      setNewton(Number(formData.N) + 1);
+    } else if (formData.tf === "250") {
+      setPhaseA(Number(formData.LT) + 1);
+      setPhaseB(Number(formData.LT) + 1);
+      setPhaseC(Number(formData.LT) + 1);
+      setPhaseA1(Number(formData.N) + 1);
+      setPhaseB1(Number(formData.N) + 1);
+      setPhaseC1(Number(formData.N) + 1);
+      setNewton(Number(formData.N) + 1);
+    }
   };
 
   return (
@@ -46,49 +85,56 @@ export default function Page() {
               ขนาดหม้อเเปลง:
             </label>
             <select
-              name="dropdown"
+              name="tf"
               value={formData.dropdown}
               onChange={handleChange}
               className="w-full border border-black p-2 rounded-md"
             >
               <option value="">เลือกขนาดหม้อเเปลง</option>
-              <option value="option1">30</option>
-              <option value="option2">50</option>
-              <option value="option3">100</option>
-              <option value="option4">160</option>
-              <option value="option5">250</option>
+              <option value="30">30 KVA</option>
+              <option value="50">50 KVA</option>
+              <option value="100">100 KVA</option>
+              <option value="160">160 KVA</option>
+              <option value="250">250 KVA</option>
+            </select>
+            <label className="block text-black text-lg font-medium mb-2">
+              ขนาดเสา:
+            </label>
+            <select
+              name="pole"
+              value={formData.dropdown}
+              onChange={handleChange}
+              className="w-full border border-black p-2 rounded-md"
+            >
+              <option value="">เลือกขนาดเสา</option>
+              <option value="12">12 เมตร</option>
+              <option value="12.20">12.20 เมตร</option>
+              <option value="14">14 เมตร</option>
+              <option value="14.30">14.30 เมตร</option>
             </select>
           </div>
-          <div>
-            <label className="block text-blackfont-medium mb-2 text-lg ">
-              ระยะห่างระหว่างLTถึง MITER:{" "}
-              <a className="text-red-600 text-sm " href="/">
-                *ดูเพิ่มเติม
-              </a>
-            </label>
+          <div className="relative p-4 ">
+            <img
+              src="Tf2.jpg"
+              alt="Transformer"
+              className="w-full h-full object-cover rounded-md"
+            />
             <input
-              placeholder="กรอกระยะห่าง"
               type="number"
               name="LT"
+              className="absolute top-0 left-0 w-22 p-2 m-2 bg-white border border-gray-300 rounded"
+              placeholder="ระยะห่างระหว่างLTถึง METER:"
               value={formData.LT}
               onChange={handleChange}
-              className="w-full border border-black p-2 rounded-md"
             />
-          </div>
-          <div>
-            <label className="block text-blackfont-medium text-lg mb-2">
-              ระยะห่างระหว่างTRถึง MITER:{" "}
-              <a className="text-red-600  text-sm " href="/">
-                *ดูเพิ่มเติม
-              </a>
-            </label>
+
             <input
-              placeholder="กรอกระยะห่าง"
               type="number"
               name="N"
+              className="absolute bottom-0 right-0  w-22 p-2 m-2 bg-white border border-gray-300 rounded"
+              placeholder="ระยะห่างระหว่างTRถึง METER:"
               value={formData.N}
               onChange={handleChange}
-              className="w-full border border-black p-2 rounded-md"
             />
           </div>
           <button
@@ -104,18 +150,18 @@ export default function Page() {
               ผลลัพธ์
             </h2>
             <div className="space-y-4">
-              <div className="p-4 bg-green-100 text-blue-700 rounded-md">
-                <p className="font-semibold">ขาออกมิเตอร์ - LT</p>
-                <p>PhaseA: {phaseA.toFixed(2)}</p>
-                <p>PhaseB: {phaseB.toFixed(2)}</p>
-                <p>PhaseC: {phaseC.toFixed(2)}</p>
-              </div>
-              <div className="p-4 bg-green-100 text-blue-700 rounded-md">
-                <p className="font-semibold">ออกจากหม้อแปลง-ขาเข้ามิเตอร์</p>
-                <p>PhaseA: {phaseA1.toFixed(2)}</p>
-                <p>PhaseB: {phaseB1.toFixed(2)}</p>
-                <p>PhaseC: {phaseC1.toFixed(2)}</p>
+              <div className="p-4 bg-green-100 text-green-700 rounded-md">
+                <p className="font-semibold">ออกจากหม้อแปลง - ขาเข้า LT</p>
+                <p>PhaseA: {phaseA.toFixed(1)} เมตร</p>
+                <p>PhaseB: {phaseB.toFixed(1)} เมตร</p>
+                <p>PhaseC: {phaseC.toFixed(1)} เมตร</p>
                 <p>N: {newton.toFixed(1)}</p>
+              </div>
+              <div className="p-4 bg-green-100 text-green-700 rounded-md">
+                <p className="font-semibold">ขาออก LT - เข้าในไลน์</p>
+                <p>PhaseA: {phaseA1.toFixed(2)} เมตร</p>
+                <p>PhaseB: {phaseB1.toFixed(2)} เมตร</p>
+                <p>PhaseC: {phaseC1.toFixed(2)} เมตร</p>
               </div>
             </div>
           </div>
