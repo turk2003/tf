@@ -113,7 +113,7 @@ export default function Page() {
               <option value="14.30">14.30 เมตร</option>
             </select>
           </div>
-          <div className="relative p-4 ">
+          <div className="relative p-6 ">
             <img
               src="Tf2.jpg"
               alt="Transformer"
