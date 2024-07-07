@@ -112,7 +112,7 @@ export default function Page() {
               <option value="14.30">14.30 เมตร</option>
             </select>
           </div>
-          <div className="relative p-4">
+          <div className="relative p-4 ">
             <img
               src="Tf.png"
               alt="Transformer"
@@ -122,7 +122,7 @@ export default function Page() {
               type="number"
               name="LT"
               className="absolute top-0 left-0 w-22 p-2 m-2 bg-white border border-gray-300 rounded"
-              placeholder="ระยะห่างระหว่างLTถึง MITER:"
+              placeholder="ระยะห่างระหว่างLTถึง METER:"
               value={formData.LT}
               onChange={handleChange}
             />
@@ -131,7 +131,7 @@ export default function Page() {
               type="number"
               name="N"
               className="absolute bottom-0 right-0  w-22 p-2 m-2 bg-white border border-gray-300 rounded"
-              placeholder="ระยะห่างระหว่างTRถึง MITER:"
+              placeholder="ระยะห่างระหว่างTRถึง METER:"
               value={formData.N}
               onChange={handleChange}
             />
