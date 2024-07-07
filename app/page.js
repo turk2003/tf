@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
         <div className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Transformers - App
+          KLA - Transformers
         </div>
         <div className="space-y-4">
           <Link
