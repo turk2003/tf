@@ -15,6 +15,7 @@ export default function Page() {
   const [formData, setFormData] = useState({
     tf: "",
     pole: "",
+    con: "",
     LT: "",
     N: "",
   });
@@ -111,6 +112,19 @@ export default function Page() {
               <option value="12.20">12.20 เมตร</option>
               <option value="14">14 เมตร</option>
               <option value="14.30">14.30 เมตร</option>
+            </select>
+            <label className="block text-black text-lg font-medium mb-2">
+              การติดตั้งคอรLT :
+            </label>
+            <select
+              name="con"
+              value={formData.dropdown}
+              onChange={handleChange}
+              className="w-full border border-black p-2 rounded-md"
+            >
+              <option value="">เลือกการติดตั้งคอรLT</option>
+              <option value="Tline">ติดคอร ตามไลน์</option>
+              <option value="Kline">ติดคอร ขวางไลน์</option>
             </select>
           </div>
           <div className="relative p-6 ">

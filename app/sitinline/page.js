@@ -14,6 +14,7 @@ export default function Page() {
   const [formData, setFormData] = useState({
     tf: "",
     pole: "",
+    circuit: "",
     LT: "",
     N: "",
   });
@@ -75,8 +76,8 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
-        <h1 className="text-3xl font-bold mb-6 text-center text-blue-500">
-          หม้อแปลงแขวน ในไลน์ PEA
+        <h1 className="text-3xl font-bold mb-6 text-center text-yellow-500">
+          หม้อแปลงนั่งร้าน ในไลน์ PEA
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -111,6 +112,19 @@ export default function Page() {
               <option value="14">14 เมตร</option>
               <option value="14.30">14.30 เมตร</option>
             </select>
+            <label className="block text-black text-lg font-medium mb-2">
+              จำนวนวงจร :
+            </label>
+            <select
+              name="circuit"
+              value={formData.dropdown}
+              onChange={handleChange}
+              className="w-full border border-black p-2 rounded-md"
+            >
+              <option value="">เลือกจำนวนวงจร</option>
+              <option value="1">1 วงจร</option>
+              <option value="2">2 วงจร</option>
+            </select>
           </div>
           <div className="relative p-4 ">
             <img
@@ -138,25 +152,25 @@ export default function Page() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200"
+            className="w-full bg-yellow-600 text-white p-2 rounded-md hover:bg-yellow-700 transition duration-200"
           >
             คำนวณ
           </button>
         </form>
-        {phaseA !== undefined && (
+        {phaseA !== undefined && formData.tf !== "30" && (
           <div className="mt-6">
             <h2 className="text-xl font-semibold text-purple-600 text-center mb-4">
               ผลลัพธ์
             </h2>
             <div className="space-y-4">
-              <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
+              <div className="p-4 bg-blue-100 text-yellow-700 rounded-md">
                 <p className="font-semibold">ออกจากหม้อแปลง - ขาเข้า LT</p>
                 <p>PhaseA: {phaseA.toFixed(1)} เมตร</p>
                 <p>PhaseB: {phaseB.toFixed(1)} เมตร</p>
                 <p>PhaseC: {phaseC.toFixed(1)} เมตร</p>
                 <p>N: {newton.toFixed(1)}</p>
               </div>
-              <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
+              <div className="p-4 bg-blue-100 text-yellow-700 rounded-md">
                 <p className="font-semibold">ขาออก LT - เข้าในไลน์</p>
                 <p>PhaseA: {phaseA1.toFixed(2)} เมตร</p>
                 <p>PhaseB: {phaseB1.toFixed(2)} เมตร</p>

@@ -15,6 +15,7 @@ export default function Page() {
     tf: "",
     pole: "",
     con: "",
+    circuit: "",
     LT: "",
     N: "",
   });
@@ -39,13 +40,13 @@ export default function Page() {
       setPhaseC1(Number(formData.N) + 2.58);
       setNewton(Number(formData.N) + 1.4);
     } else if (formData.tf === "30") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
+      setPhaseA(Number(formData.LT) + 2.8);
+      setPhaseB(Number(formData.LT) + 2.5);
       setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
+      setPhaseA1(Number(formData.N) + 2.78);
+      setPhaseB1(Number(formData.N) + 2.28);
+      setPhaseC1(Number(formData.N) + 2.58);
+      setNewton(Number(formData.N) + 1.1);
     } else if (formData.tf === "100") {
       setPhaseA(Number(formData.LT) + 1);
       setPhaseB(Number(formData.LT) + 1);
@@ -116,7 +117,7 @@ export default function Page() {
               การติดตั้งคอรLT :
             </label>
             <select
-              name="pole"
+              name="con"
               value={formData.dropdown}
               onChange={handleChange}
               className="w-full border border-black p-2 rounded-md"
@@ -125,7 +126,21 @@ export default function Page() {
               <option value="Tline">ติดคอร ตามไลน์</option>
               <option value="Kline">ติดคอร ขวางไลน์</option>
             </select>
+            <label className="block text-black text-lg font-medium mb-2">
+              จำนวนวงจร :
+            </label>
+            <select
+              name="circuit"
+              value={formData.dropdown}
+              onChange={handleChange}
+              className="w-full border border-black p-2 rounded-md"
+            >
+              <option value="">เลือกจำนวนวงจร</option>
+              <option value="1">1 วงจร</option>
+              <option value="2">2 วงจร</option>
+            </select>
           </div>
+
           <div className="relative p-4 ">
             <img
               src="Tf.png"
@@ -157,7 +172,7 @@ export default function Page() {
             คำนวณ
           </button>
         </form>
-        {phaseA !== undefined && (
+        {phaseA !== undefined && formData.tf !== "30" && (
           <div className="mt-6">
             <h2 className="text-xl font-semibold text-purple-600 text-center mb-4">
               ผลลัพธ์
@@ -179,6 +194,49 @@ export default function Page() {
             </div>
           </div>
         )}
+        {phaseA !== undefined &&
+          formData.tf === "30" &&
+          formData.circuit === "2" && (
+            <div className="mt-6">
+              <h2 className="text-xl font-semibold text-purple-600 text-center mb-4">
+                ผลลัพธ์
+              </h2>
+              <div className="space-y-4">
+                <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
+                  <p className="font-semibold">ออกจากหม้อแปลง - ขาเข้า LT</p>
+                  <p>PhaseA: {phaseA.toFixed(1)} เมตร</p>
+                  <p>PhaseB: {phaseB.toFixed(1)} เมตร</p>
+                  <p>N: {newton.toFixed(1)}</p>
+                </div>
+                <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
+                  <p className="font-semibold">ขาออก LT - เข้าในไลน์</p>
+                  <p>PhaseA: {phaseA1.toFixed(2)} เมตร</p>
+                  <p>PhaseB: {phaseB1.toFixed(2)} เมตร</p>
+                </div>
+              </div>
+            </div>
+          )}
+        {phaseA !== undefined &&
+          formData.tf === "30" &&
+          formData.circuit === "1" && (
+            <div className="mt-6">
+              <h2 className="text-xl font-semibold text-purple-600 text-center mb-4">
+                ผลลัพธ์
+              </h2>
+              <div className="space-y-4">
+                <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
+                  <p className="font-semibold">ออกจากหม้อแปลง - ขาเข้า LT</p>
+                  <p>PhaseA: {phaseA.toFixed(1)} เมตร</p>
+
+                  <p>N: {newton.toFixed(1)}</p>
+                </div>
+                <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
+                  <p className="font-semibold">ขาออก LT - เข้าในไลน์</p>
+                  <p>PhaseA: {phaseA1.toFixed(2)} เมตร</p>
+                </div>
+              </div>
+            </div>
+          )}
       </div>
     </div>
   );
