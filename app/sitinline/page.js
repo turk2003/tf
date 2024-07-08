@@ -30,47 +30,13 @@ export default function Page() {
   const handleSubmit = (e) => {
     console.log(formData.tf);
     e.preventDefault();
-    if (formData.tf === "50") {
-      setPhaseA(Number(formData.LT) + 3.1);
-      setPhaseB(Number(formData.LT) + 2.8);
-      setPhaseC(Number(formData.LT) + 3.3);
-      setPhaseA1(Number(formData.N) + 2.78);
-      setPhaseB1(Number(formData.N) + 2.28);
-      setPhaseC1(Number(formData.N) + 2.58);
-      setNewton(Number(formData.N) + 1.4);
-    } else if (formData.tf === "30") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
-      setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
-    } else if (formData.tf === "100") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
-      setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
-    } else if (formData.tf === "160") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
-      setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
-    } else if (formData.tf === "250") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
-      setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
-    }
+    setPhaseA(Number(formData.LT) + 3.1);
+    setPhaseB(Number(formData.LT) + 2.8);
+    setPhaseC(Number(formData.LT) + 3.3);
+    setPhaseA1(Number(formData.N) + 2.78);
+    setPhaseB1(Number(formData.N) + 2.28);
+    setPhaseC1(Number(formData.N) + 2.58);
+    setNewton(Number(formData.N) + 1.4);
   };
 
   return (
@@ -128,7 +94,7 @@ export default function Page() {
           </div>
           <div className="relative p-4 ">
             <img
-              src="Tf.png"
+              src="sit.jpg"
               alt="Transformer"
               className="w-full h-full object-cover rounded-md"
             />
