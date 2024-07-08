@@ -272,28 +272,7 @@ export default function Page() {
               </div>
             </div>
           )}
-        {/* {phaseA !== undefined &&
-          formData.tf === "30" &&
-          formData.circuit === "2" && (
-            <div className="mt-6">
-              <h2 className="text-xl font-semibold text-purple-600 text-center mb-4">
-                ผลลัพธ์
-              </h2>
-              <div className="space-y-4">
-                <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
-                  <p className="font-semibold">ออกจากหม้อแปลง - ขาเข้า LT</p>
-                  <p>PhaseA: {phaseA.toFixed(1)} เมตร</p>
-                  <p>PhaseB: {phaseB.toFixed(1)} เมตร</p>
-                  <p>N: {newton.toFixed(1)}</p>
-                </div>
-                <div className="p-4 bg-blue-100 text-blue-700 rounded-md">
-                  <p className="font-semibold">ขาออก LT - เข้าในไลน์</p>
-                  <p>PhaseA: {phaseA1.toFixed(2)} เมตร</p>
-                  <p>PhaseB: {phaseB1.toFixed(2)} เมตร</p>
-                </div>
-              </div>
-            </div>
-          )} */}
+
         {phaseA !== undefined &&
           formData.tf === "30" &&
           formData.circuit === "1" && (
