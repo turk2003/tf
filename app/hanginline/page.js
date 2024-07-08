@@ -48,29 +48,29 @@ export default function Page() {
       setPhaseC1(Number(formData.N) + 2.58);
       setNewton(Number(formData.N) + 1.1);
     } else if (formData.tf === "100") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
+      setPhaseA(Number(formData.LT) + 2.8);
+      setPhaseB(Number(formData.LT) + 2.5);
       setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
+      setPhaseA1(Number(formData.N) + 2.78);
+      setPhaseB1(Number(formData.N) + 2.28);
+      setPhaseC1(Number(formData.N) + 2.58);
+      setNewton(Number(formData.N) + 1.1);
     } else if (formData.tf === "160") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
+      setPhaseA(Number(formData.LT) + 2.8);
+      setPhaseB(Number(formData.LT) + 2.5);
       setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
+      setPhaseA1(Number(formData.N) + 2.78);
+      setPhaseB1(Number(formData.N) + 2.28);
+      setPhaseC1(Number(formData.N) + 2.58);
+      setNewton(Number(formData.N) + 1.1);
     } else if (formData.tf === "250") {
-      setPhaseA(Number(formData.LT) + 1);
-      setPhaseB(Number(formData.LT) + 1);
+      setPhaseA(Number(formData.LT) + 2.8);
+      setPhaseB(Number(formData.LT) + 2.5);
       setPhaseC(Number(formData.LT) + 1);
-      setPhaseA1(Number(formData.N) + 1);
-      setPhaseB1(Number(formData.N) + 1);
-      setPhaseC1(Number(formData.N) + 1);
-      setNewton(Number(formData.N) + 1);
+      setPhaseA1(Number(formData.N) + 2.78);
+      setPhaseB1(Number(formData.N) + 2.28);
+      setPhaseC1(Number(formData.N) + 2.58);
+      setNewton(Number(formData.N) + 1.1);
     }
   };
 
